@@ -1,0 +1,16 @@
+<div class="sidebar">
+  <div class="navbar-brand header-logo">
+    <h1 class="p-4">LMS</h1>
+  </div>
+  <ul class="">
+    <li class="nav-item {% if 'index' in segment %} active {% endif %}">
+      <a href="{% url 'index' %}" class="nav-link "><span class="pcoded-micon"><i class="feather icon-grid"></i></span><span class="pcoded-mtext">Dashboard</span></a>
+    </li>
+    <li class="nav-item {% if 'show_books' in segment %} active {% endif %}">
+      <a href="{% url 'show_books' %}" class="nav-link "><span class="pcoded-micon"><i class="feather icon-grid"></i></span><span class="pcoded-mtext">View Books</span></a>
+    </li>
+    <li class="nav-item">
+      <a href="{% url 'logout' %}" class="nav-link "><span class="pcoded-micon"><i class="feather icon-grid"></i></span><span class="pcoded-mtext">Logout</span></a>
+    </li>
+  </ul>
+</div>

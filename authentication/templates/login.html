@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}Admin Login{% endblock %}
+
+{% block content %}
+<h1 class="d-flex justify-content-center m-5">Login</h1>
+<div class="d-flex justify-content-center">
+  <form method="post" class="form" style="    width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;">
+  <span class="mb-0 text-danger d-flex justify-content-center">
+    {% if message %}
+        {{ message | safe }}
+    {% endif %} 
+</span>
+  {% csrf_token %}
+      <div class="form-group pb-3">
+          <label for="email">Email Id</label>
+          <input type="email" name="email" id="email" class="form-control" required>
+      </div>
+      <div class="from-group pb-3">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" class="form-control" required>
+      </div>
+      <div class="row justify-content-center">
+          <input type="submit" class="btn btn-outline-primary text-center" value="Login">
+      </div>
+      <br>
+      <p>Create New Admin? &nbsp; <a href="{% url 'register' %}">Click here</a></p>
+  </form>
+  </div>
+{% endblock %}

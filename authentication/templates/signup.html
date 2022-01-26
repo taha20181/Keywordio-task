@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Admin Signup{% endblock %}
+
+{% block content %}
+<h1 class="d-flex justify-content-center m-5">Sign Up</h1>
+<div class="d-flex justify-content-center">
+  <form method="post" class="form" style="    width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;">
+
+  <span class="mb-0 text-danger">
+    {% if message %}
+        {{ message | safe }}
+    {% endif %} 
+</span>
+  {% csrf_token %}
+      <div class="form-group">
+          <label for="email">Email Id</label>
+          <input type="email" name="email" id="email" class="form-control" required>
+      </div>
+      <div class="from-group pb-3">
+          <label for="password1">Password</label>
+          <input type="password" name="password1" id="password1" class="form-control" required>
+      </div>
+      <div class="from-group pb-3">
+        <label for="password2">Confirm Password</label>
+        <input type="password" name="password2" id="password2" class="form-control" required>
+    </div>
+      <div class="row justify-content-center">
+          <input type="submit" class="btn btn-outline-primary text-center" value="Register">
+      </div>
+  </form>
+  </div>
+{% endblock %}
